@@ -75,6 +75,16 @@
 
           return currentNode;
         }
+
+        delete(index) {
+          // const newNode = new Node(value);
+          const leader = this.traverseToIndex(index - 1);
+          const unwantedNode = leader.next;
+          leader.next = unwantedNode.next;
+          console.log(unwantedNode.next);
+          this.length--;
+          return this.printList();
+        }
       }
 
       const myLinkedList = new LinkedList(10);
@@ -84,6 +94,7 @@
       // myLinkedList.printList();
 
       console.log(myLinkedList.insert(2, 50));
+      console.log(myLinkedList.delete(2));
 
       // function reCurr(input) {
       // 	for (let i = 0; i<input.length; i++) {
