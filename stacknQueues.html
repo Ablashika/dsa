@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>
+        
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+    <h1>CHECK CONSOLE</h1>
+
+    <script>
+
+        class Node {
+            constructor(value){
+              this.value = value;
+              this.next = null;
+            }
+        }
+        
+      
+        class Stack {
+
+            constructor(){
+                this.top = null;
+                this.buttom = null;
+                this.length = 0;
+            }
+
+            peeK(){
+              
+                return this.top
+                
+            }
+            push(value){
+
+                const newNode = new Node(value);
+                if (this.length ===  0) {
+                    this.top = newNode;
+                    this.buttom = newNode;
+                } 
+
+                   else 
+                   {
+
+                    const holdingPointer = this.top;
+                    this.top = newNode;
+                    this.top.next = holdingPointer;
+                   }
+
+                this.length++;
+                return this;
+                    
+                }
+            pop(){
+
+                if (this.top === this.buttom){
+                    this.buttom = null
+                }
+
+                this.top = this.top.next;
+                this.length--;
+                return this
+
+            }
+        }
+
+
+        let myStack = new Stack();
+        myStack.push("google")
+        myStack.push("udemy")
+        myStack.pop()
+        myStack.pop()
+
+        console.log(myStack)
+
+
+    </script>
+    
+</body>
+</html>
