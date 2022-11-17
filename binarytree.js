@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
 
-    
-<body>
-
-    <script>
         class Node {
         constructor(value){
         this.left = null;
@@ -56,6 +49,43 @@ class binaryTree{
         }
     }
 
+    lookUp(value){
+         
+        if (!this.root) {
+            return false;
+        } 
+
+            let currentNode = this.root;
+            while (currentNode){
+                if (value < currentNode.value) {
+                       currentNode = currentNode.left;
+                } else if (value > currentNode.value) {
+
+                    currentNode = currentNode.right;
+                } else if (currentNode.value === value) {
+                        return currentNode; 
+
+                }
+
+          
+             }
+
+             return false;
+        
+    }
+
+
+    remove () {
+         
+    }
+
+
+
+   
+
+
+
+
 }
 
 
@@ -64,13 +94,10 @@ class binaryTree{
    binaryTreeNew.insert(70);
    binaryTreeNew.insert(60);
    binaryTreeNew.insert(100);
+
    
-   console.log(binaryTreeNew)
+   
+   console.log(binaryTreeNew.lookUp(90))
 
 
 //     console.log(binaryTreeNew)
-    </script>
-</head>
-    
-</body>
-</html>
