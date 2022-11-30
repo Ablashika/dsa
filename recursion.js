@@ -65,3 +65,6 @@ function fiboIterative (n) {
 
 
 console.log(fiboIterative(3))
+
+
+//writing traversals using loops
