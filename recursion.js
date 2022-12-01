@@ -51,7 +51,9 @@ console.log(fibonacci(7)
 
 //finobucci iterative O(n)
 
-function fiboIterative (n) {
+function fiboIterative
+
+(n) {
 
   let array = [0,1]
 
