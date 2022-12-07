@@ -123,17 +123,96 @@ class binaryTree{
     }
 
 
+    DFSInorder(){
 
+        return traverseInOrder(this.root,[])
+
+
+
+
+
+    }
+
+    DFSPreOrder(){
+
+        return traversePreOrder(this.root ,[])
+
+
+
+
+    }
+    DFSPostOrder(){
+        return traversePostOrder(this.root ,[]) 
+
+
+    }
 
 }
 
 
+
+
+function traverseInOrder (node, list){
+    console.log(node.value)
+    if (node.left){
+        traverseInOrder(node.left, list) 
+     }
+     list.push(node.value)
+
+     if (node.right){
+        traverseInOrder(node.right, list)
+     }
+
+     return list
+}
+
+
+
+function traversePreOrder (node, list){
+    // with preorder you push the parents first
+    list.push(node.value)
+    console.log(node.value)
+    if (node.left){
+        traversePreOrder(node.left, list) 
+     }
+     if (node.right){
+        traversePreOrder(node.right, list)
+     }
+
+     return list
+}
+
+
+
+function traversePostOrder (node, list){
+    // post oder will have the list push at the end
+   
+    console.log(node.value)
+    if (node.left){
+        traversePostOrder(node.left, list) 
+     }
+     if (node.right){
+        traversePostOrder(node.right, list)
+     }
+     list.push(node.value)
+
+     return list
+}
+
+
+
+
    let binaryTreeNew = new binaryTree()
-   binaryTreeNew.insert(90);
-   binaryTreeNew.insert(70);
-   binaryTreeNew.insert(60);
-   binaryTreeNew.insert(100);
-  binaryTreeNew.breathFristSearch()
+   binaryTreeNew.insert(9);
+   binaryTreeNew.insert(4);
+   binaryTreeNew.insert(6);
+   binaryTreeNew.insert(20);
+   binaryTreeNew.insert(170);
+   binaryTreeNew.insert(15);
+   binaryTreeNew.insert(1);
+   let tree = binaryTreeNew.DFSInorder()
+   let preOrder = binaryTreeNew.DFSPreOrder()
+   let post = binaryTreeNew.DFSPostOrder()
    
 
    
@@ -142,7 +221,7 @@ class binaryTree{
 //we only use this.key word in classes and we intanciated that class which will now be (binaryTreeNew) hence the argumrnt this.root becomes
 // (binaryTreeNew.root) also we passed the list and queue as a parameter in the method above and passed the values are arugment becasue it
 //it is a recursive function 
-   console.log(binaryTreeNew.breathFristSearchRecursive([binaryTreeNew.root],[]))
+//    console.log(binaryTreeNew.breathFristSearchRecursive([binaryTreeNew.root],[]))
 
 
-//     console.log(binaryTreeNew)
+    console.log(post)
